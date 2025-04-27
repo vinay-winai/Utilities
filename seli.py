@@ -11,14 +11,11 @@ with open('down.txt', 'r') as file:
 firefox_options = Options()
 firefox_options.add_argument("-private")
 
-# Path to your geckodriver
-geckodriver_path = '/path/to/geckodriver'  # Update with your geckodriver path
-
 # Iterate over each link
 for link in links:
     link = link.strip()
     try:
-        driver = webdriver.Firefox(executable_path=geckodriver_path, options=firefox_options)
+        driver = webdriver.Firefox(options=firefox_options)
         driver.get(link)
         
         # Allow the page to load
